@@ -1,16 +1,16 @@
-# This is a sample Python script.
+import argparse
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import pyqrcode
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def create_qr_code(text: str):
+    url = pyqrcode.create(text)
+    url.svg("qrcode.svg", scale=8)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    parser = argparse.ArgumentParser(description='Generate a QR code from an input string')
+    parser.add_argument('input_string', type=str, help='Input string to generate QR code from')
+    args = parser.parse_args()
+
+    create_qr_code(args.input_string)
