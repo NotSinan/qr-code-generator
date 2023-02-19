@@ -1,5 +1,5 @@
 import argparse
-from qrcodegenerator import generate_qr_code
+from qrcode import generator
 
 
 def main():
@@ -10,7 +10,7 @@ def main():
     args = parser.parse_args()
 
     output_file = f"{args.output_file}.{args.output_format}"
-    generate_qr_code(args.input_string, output_file, args.output_format)
+    generator.generate_qr_code(args.input_string, output_file, args.output_format)
     print(f"QR code generated successfully and saved as {output_file}!")
 
 
