@@ -1,23 +1,8 @@
 import argparse
-import pyqrcode
-import os
+from qrcodegenerator import generate_qr_code
 
 
-def create_qr_code(text: str, output_file: str = None, output_format: str = 'svg'):
-    url = pyqrcode.create(text)
-    if output_file:
-        if output_format.lower() == 'svg':
-            url.svg(output_file, scale=8)
-        elif output_format.lower() == 'png':
-            url.png(output_file, scale=8)
-        else:
-            print(f"Invalid output format: {output_format}")
-            return
-    else:
-        url.svg("qrcode.svg", scale=8)
-
-
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(description='Generate a QR code from an input string')
     parser.add_argument('input_string', type=str, help='Input string to generate QR code from')
     parser.add_argument('--output-file', type=str, help='Output file name', default='qrcode')
@@ -25,4 +10,9 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     output_file = f"{args.output_file}.{args.output_format}"
-    create_qr_code(args.input_string, output_file, args.output_format)
+    generate_qr_code(args.input_string, output_file, args.output_format)
+    print(f"QR code generated successfully and saved as {output_file}!")
+
+
+if __name__ == '__main__':
+    main()
