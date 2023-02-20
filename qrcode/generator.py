@@ -5,15 +5,16 @@ def generate_qr_code(text: str,
                      output_file: str = None,
                      output_format: str = 'svg',
                      scale: int = 8,
-                     module_color: tuple = (255, 255, 255),
-                     background: str = None):
+                     module_color: str = "#FFFFFF",
+                     background: str = None,
+                     quiet_zone: int = 4):
     url = pyqrcode.create(text)
 
     if output_file:
         if output_format.lower() == 'svg':
-            url.svg(output_file, scale=scale, module_color=module_color, background=background)
+            url.svg(output_file, scale=scale, module_color=module_color, background=background, quiet_zone=quiet_zone)
         elif output_format.lower() == 'png':
-            url.png(output_file, scale=scale, module_color=module_color, background=background)
+            url.png(output_file, scale=scale, module_color=module_color, background=background, quiet_zone=quiet_zone)
         else:
             print(f"Invalid output format: {output_format}")
             return
