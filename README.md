@@ -18,13 +18,13 @@ python qr_code_generator.py input_string [-o OUTPUT] [-f FORMAT] [-s SCALE] [-q 
 ```
 
 ## Arguments
-* input_string: Required input string to generate the QR code from.
-* -o, --output: Output file for generated QR code (default: qrcode.svg).
-* -f, --format: Output file format (svg or png, default: svg).
-* -s, --scale: Size of QR code squares (default: 8).
-* -q, --quiet-zone: Size of the quiet zone around the QR code (default: 4).
-* -c, --bg-color: Background color of the QR code (default: white).
-* -m, --module-color: Module color of the QR code (default: white).
+* **input_string**: Required input string to generate the QR code from.
+* **-o, --output**: Output file for generated QR code (default: qrcode.svg).
+* **-f, --format**: Output file format (svg or png, default: svg).
+* **-s, --scale**: Size of QR code squares (default: 8).
+* **-q, --quiet-zone**: Size of the quiet zone around the QR code (default: 4).
+* **-c, --bg-color**: Background color of the QR code (default: "#ffffff").
+* **-m, --module-color**: Module color of the QR code (default: "#ffffff").
 
 ## Example Usage
 

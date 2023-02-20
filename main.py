@@ -9,8 +9,8 @@ def main():
     parser.add_argument('-f', '--format', type=str, help='Output file format (svg or png, default: svg)', default='svg')
     parser.add_argument('-s', '--scale', type=int, help='Size of QR code squares (default: 8)', default=8)
     parser.add_argument('-q', '--quiet-zone', type=int, help='Size of the quiet zone around the QR code (default: 4)',default=4)
-    parser.add_argument('-c', '--bg-color', type=str, help='Background color of the QR code', default='white')
-    parser.add_argument('-m', '--module-color', type=str, help='Module color of the QR code', default='white')
+    parser.add_argument('-c', '--bg-color', type=str, help='Background color of the QR code', default='#ffffff')
+    parser.add_argument('-m', '--module-color', type=str, help='Module color of the QR code', default='#ffffff')
     args = parser.parse_args()
     output_file = f"{args.output}.{args.format}"
     generator.generate_qr_code(text=args.input_string,
