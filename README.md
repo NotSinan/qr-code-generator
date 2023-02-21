@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 The script can be run from the command line using the following command:
 ```
-python qr_code_generator.py input_string [-o OUTPUT] [-f FORMAT] [-s SCALE] [-q QUIET_ZONE] [-c BG_COLOR] [-m MODULE_COLOR]
+python main.py input_string [-o OUTPUT] [-f FORMAT] [-s SCALE] [-q QUIET_ZONE] [-c BG_COLOR] [-m MODULE_COLOR]
 ```
 
 ## Arguments
@@ -24,17 +24,17 @@ python qr_code_generator.py input_string [-o OUTPUT] [-f FORMAT] [-s SCALE] [-q 
 * **-s, --scale**: Size of QR code squares (default: 8).
 * **-q, --quiet-zone**: Size of the quiet zone around the QR code (default: 4).
 * **-c, --bg-color**: Background color of the QR code (default: "#ffffff").
-* **-m, --module-color**: Module color of the QR code (default: "#ffffff").
+* **-m, --module-color**: Module color of the QR code (default: "#111111").
 
 ## Example Usage
 
 To generate a QR code for the input string "Hello, world!" with the default options:
 
 ```
-python qr_code_generator.py "Hello, world!"
+python main.py "Hello, world!"
 ```
 
 To generate a PNG QR code with a quiet zone size of 10 and a red background color:
 ```
-python qr_code_generator.py "Hello, world!" -o output -f png -q 10 -c red
+python main.py "Hello, world!" -o "output" -f "png" -q 10 -c "#ffffff"
 ```
